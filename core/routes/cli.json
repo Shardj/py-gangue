@@ -1,0 +1,112 @@
+{
+  "setup" : {
+    "database" : {
+      "INSTRUCTIONS" : {
+        "0" : {
+          "IMPORT-MODULE" : {
+            "RELATIVE-PATH" : "sql",
+            "IMPORT" : "setup",
+            "AS" : "setup-import"
+          },
+          "RUN" : {
+            "MODULE" : "setup-import",
+            "CALL" : "Setup",
+            "DEFAULT-PARAMETERS" : {
+
+            }
+          }
+        },
+        "1" : {
+          "IMPORT-MODULE" : {
+            "RELATIVE-PATH" : "sql",
+            "IMPORT" : "upgrade",
+            "AS" : "upgrade-import"
+          },
+          "RUN" : {
+            "MODULE" : "upgrade-import",
+            "CALL" : "Upgrade",
+            "DEFAULT-PARAMETERS" : {
+
+            }
+          }
+        }
+      }
+    }
+  },
+  "test" : {
+    "all" : {
+      "INSTRUCTIONS" : {
+        "0" : {
+          "IMPORT-MODULE" : {
+            "RELATIVE-PATH" : "core/packages/testing",
+            "IMPORT" : "test",
+            "AS" : "test-import"
+          },
+          "RUN" : {
+            "MODULE" : "test-import",
+            "CALL" : "Test",
+            "DEFAULT-PARAMETERS" : {
+              "All" : true
+            }
+          }
+        }
+      }
+    },
+    "INSTRUCTIONS" : {
+      "0" : {
+        "IMPORT-MODULE" : {
+          "RELATIVE-PATH" : "core/packages/testing",
+          "IMPORT" : "test",
+          "AS" : "test-import"
+        },
+        "RUN" : {
+          "MODULE" : "test-import",
+          "CALL" : "Test",
+          "DEFAULT-PARAMETERS" : {
+            "All" : false
+          }
+        }
+      }
+    }
+  },
+  "requirements" : {
+    "check" : {
+      "INSTRUCTIONS" : {
+        "0" : {
+          "IMPORT-MODULE" : {
+            "RELATIVE-PATH" : "core/packages",
+            "FROM" : "requirements",
+            "IMPORT" : "check",
+            "AS" : "check-import"
+          },
+          "RUN" : {
+            "MODULE" : "check-import",
+            "CALL" : "Check",
+            "DEFAULT-PARAMETERS" : {
+
+            }
+          }
+        }
+      }
+    },
+    "install" : {
+      "INSTRUCTIONS" : {
+        "0" : {
+          "IMPORT-MODULE" : {
+            "RELATIVE-PATH" : "core/packages",
+            "FROM" : "requirements",
+            "IMPORT" : "install",
+            "AS" : "install-import"
+          },
+          "RUN" : {
+            "MODULE" : "install-import",
+            "CALL" : "Install",
+            "DEFAULT-PARAMETERS" : {
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
