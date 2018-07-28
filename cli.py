@@ -1,4 +1,4 @@
-import sys, bootstrap
+import sys
 
 class bot:
     # command: function
