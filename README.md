@@ -1,5 +1,7 @@
 # Py-Gangue
 
+A project I deleted and re-wrote about 5 times before getting bored / exhaused by. Archiving repo.
+
 ## Core Commands
 * Setup everything: `gangue setup`
   * Setup database: `gangue setup database`
